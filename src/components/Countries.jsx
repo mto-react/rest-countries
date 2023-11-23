@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import CountryContext from "../contexts/CountryContext";
 
-export default function Countries({countries}) {
+export default function Countries() {
+
+    const {countries} = useContext(CountryContext)
+    // console.log(countries);
     return (
         <div className="card">
             <div className="card-header">

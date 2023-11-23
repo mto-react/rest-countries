@@ -1,6 +1,10 @@
 import reactLogo from '../assets/react.svg'
+import { useContext } from 'react';
+import CountryContext from '../contexts/CountryContext';
 
-export default function Navbar({region, setRegion}) {
+export default function Navbar() {
+
+    const {region, setRegion} = useContext(CountryContext);
     // console.log(region)
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">

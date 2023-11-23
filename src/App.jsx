@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 // import Main from './components/Main'
 import axios from 'axios';
 import Countries from './components/Countries';
+import CountryContext from './contexts/CountryContext';
 
 function App() {
   const [region, setRegion] = useState('all')
@@ -27,10 +28,12 @@ function App() {
   console.log(region)
   return (
     <>
-      <Navbar region={region} setRegion={setRegion} />
+    <CountryContext.Provider value={{region:region, setRegion:setRegion, countries:countries}}>
+      <Navbar region={region} />
       <main className="">
           <Countries countries={countries}/>
       </main>
+    </CountryContext.Provider>
     </>
   )
 }
