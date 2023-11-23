@@ -12,6 +12,23 @@
 
 nav {
   height: 5em;
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2em;
+    .navbar-nav.left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        cursor: pointer;
+        &.active {
+          color: red;
+        }
+      }
+    }
+  }
 }
 
 .logo {
@@ -20,6 +37,8 @@ nav {
   will-change: filter;
   transition: filter 300ms;
 }
+
+
 
 main {
   display: flex;
@@ -39,6 +58,12 @@ main {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          .country-meta {
+            text-align: left;
+            span {
+              margin: 0 1em 0 0;
+            }
+          }
           img {
             width: 5em;
           }

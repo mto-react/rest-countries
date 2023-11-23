@@ -1,27 +1,22 @@
 import reactLogo from '../assets/react.svg'
 
-export default function Navbar() {
-
+export default function Navbar({region, setRegion}) {
+    // console.log(region)
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <a className="nav-link active" aria-current="page" href="#">Countries</a>
-                        <a className="nav-link" href="#">Europe</a>
-                        <a className="nav-link" href="#">Asia</a>
-                        <a className="nav-link" href="#">Africa</a>
-                    </div>
+                <div className="navbar-nav left">
+                    <a className="navbar-brand" href="#">
+                        <img src={reactLogo} className="logo react" alt="React logo" />
+                    </a>
+                    <a className={region == 'all' ? "nav-link active" : "nav-link"} onClick={() => setRegion('all')}>Earth</a>
+                    <a className={region == 'Europe' ? "nav-link active" : "nav-link"} onClick={() => setRegion('Europe')}>Europe</a>
+                    <a className={region == 'Asia' ? "nav-link active" : "nav-link"} onClick={() => setRegion('Asia')}>Asia</a>
+                    <a className={region == 'Africa' ? "nav-link active" : "nav-link"} onClick={() => setRegion('Africa')}>Africa</a>
                 </div>
 
-                <div className="">
-                    {/* { isLogin ? 'Log Out' : 'Connextion' } */}
+                <div className="navbar-nav right">
+                    Connextion
                 </div>
             </div>
         </nav>
